@@ -1,108 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
+
 namespace RoadAnomaliesService.Models
 {
+    [Table("Anomalies")]
     public class Anomaly
     {
-        private float latitute;
-        private float longitude;
-        private bool flagAnomaly;
-        private float zReading;
-        private float trust;
-        private int count;
+        public int Id { get; set; }
 
-        public float Latitute
+        public double Latitude
         {
-            get
-            {
-                return latitute;
-            }
-
-            set
-            {
-                latitute = value;
-            }
+            get; set;
         }
 
-        public float Longitude
+        public double Longitude
         {
-            get
-            {
-                return longitude;
-            }
-
-            set
-            {
-                longitude = value;
-            }
+            get; set;
         }
 
         public bool FlagAnomaly
         {
-            get
-            {
-                return flagAnomaly;
-            }
-
-            set
-            {
-                flagAnomaly = value;
-            }
+            get; set;
         }
 
-        public float ZReading
+        public double ZReading
         {
-            get
-            {
-                return zReading;
-            }
-
-            set
-            {
-                zReading = value;
-            }
+            get; set;
         }
 
-        public float Trust
+        public double Trust
         {
-            get
-            {
-                return trust;
-            }
-
-            set
-            {
-                trust = value;
-            }
+            get; set;
         }
 
         public int Count
         {
-            get
-            {
-                return count;
-            }
-
-            set
-            {
-                count = value;
-            }
+            get; set;
         }
 
-        public Anomaly() { }
-
-        public Anomaly(float latitute, float longitude, bool flagAnomaly, float zReading, float trust, int count)
-        {
-            this.latitute = latitute;
-            this.longitude = longitude;
-            this.flagAnomaly = flagAnomaly;
-            this.zReading = zReading;
-            this.trust = trust;
-            this.count = count;
-        }
+        public DateTime Date { get; set; }
 
     }
 }
