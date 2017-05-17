@@ -107,6 +107,7 @@
     <Compile Include="Models\Anomaly.cs" />
     <Compile Include="Models\AnomalyContext.cs" />
     <Compile Include="Models\DataController.cs" />
+    <Compile Include="Models\Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

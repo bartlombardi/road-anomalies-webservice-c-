@@ -44,5 +44,7 @@ namespace RoadAnomaliesService.Models
 
         public DateTime Date { get; set; }
 
+        public DateTime Update { get; set; }
+
     }
 }
