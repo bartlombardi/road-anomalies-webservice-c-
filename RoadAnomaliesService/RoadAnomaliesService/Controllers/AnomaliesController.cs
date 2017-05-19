@@ -13,7 +13,7 @@ namespace RoadAnomaliesService.Controllers
         public DataController DataController = new DataController();
         
         // GET: api/Anomalies
-        public List<Anomaly> Get() { return DataController.getAllAnomaly(); }
+        public IEnumerable<Anomaly> Get() { return DataController.getAllAnomaly(); }
 
         //// GET: api/Anomalies/5
         //public string Get(int id)
