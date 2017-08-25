@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using RoadAnomaliesService.Models;
 
@@ -16,21 +12,21 @@ namespace RoadAnomaliesService.Controllers
         public IEnumerable<Anomaly> Get() { return DataController.getAllAnomaly(); }
 
         //// GET: api/Anomalies/5
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        public void Get(double latitude, double longitude, double zReading)
+        {
+            DataController.addAnomaly(latitude, longitude, zReading);
+        }
 
-        // POST: api/Anomalies
-        public void Post([FromBody]string value)
+        // POST: api/Anomalies [FromBody]string value
+        public void Post()
         {
         }
 
         // PUT: api/Anomalies/5
-        public void Put(double latitude, double longitude, double zReading)
-        {
-            DataController.addAnomaly(latitude, longitude, zReading);
-        }
+        //public void Put(double latitude, double longitude, double zReading)
+        //{
+        //    DataController.addAnomaly(latitude, longitude, zReading);
+        //}
 
         // DELETE: api/Anomalies/5
         public void Delete(int id)
