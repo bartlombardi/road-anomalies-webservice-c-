@@ -27,11 +27,6 @@ namespace RoadAnomaliesService.Models
             get; set;
         }
 
-        public double ZReading
-        {
-            get; set;
-        }
-
         public double Trust
         {
             get; set;

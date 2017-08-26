@@ -11,7 +11,7 @@ namespace RoadAnomaliesService.Models
     {
         private AnomalyContext AnomalyDb = new AnomalyContext();
 
-        public void addAnomaly(double latitude, double longitude, double zReading)
+        public void addAnomaly(double latitude, double longitude)
         {
             List<Anomaly> allAnomaly = getAllAnomaly();
             bool isEntered = false;
@@ -22,7 +22,6 @@ namespace RoadAnomaliesService.Models
                 {
                     isEntered = true;
                     a.FlagAnomaly = true;
-                    a.ZReading = zReading;
                     a.Count += 1;
                     a.Trust = (a.Count * 0.7) + a.Trust;
                     a.Date = DateTime.Now;
@@ -33,7 +32,7 @@ namespace RoadAnomaliesService.Models
 
             if (!isEntered)
             {
-                Anomaly newAnomaly = new Anomaly{ Latitude=latitude,Longitude=longitude,FlagAnomaly=false,ZReading=zReading,Trust=70,Count=1,Date=DateTime.Now,Update=DateTime.Now };
+                Anomaly newAnomaly = new Anomaly{ Latitude=latitude,Longitude=longitude,FlagAnomaly=false,Trust=70,Count=1,Date=DateTime.Now,Update=DateTime.Now };
                 AnomalyDb.anomalies.Add(newAnomaly);
                 AnomalyDb.SaveChanges();
             }

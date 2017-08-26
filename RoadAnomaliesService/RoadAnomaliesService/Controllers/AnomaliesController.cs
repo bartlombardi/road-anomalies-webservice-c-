@@ -12,11 +12,15 @@ namespace RoadAnomaliesService.Controllers
         public IEnumerable<Anomaly> Get() { return DataController.getAllAnomaly(); }
 
         //// GET: api/Anomalies/5
-        public void Get(double latitude, double longitude, double zReading)
+        public void Get(double latitude, double longitude)
         {
-            DataController.addAnomaly(latitude, longitude, zReading);
+            //foreach(string number in listOfIds.Split(','))
+            // model.Add(GetValueForId(int.Parse(number))
+
+            DataController.addAnomaly(latitude, longitude);
         }
 
+        
         // POST: api/Anomalies [FromBody]string value
         public void Post()
         {
