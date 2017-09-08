@@ -32,7 +32,7 @@ namespace RoadAnomaliesService.Models
 
             if (!isEntered)
             {
-                Anomaly newAnomaly = new Anomaly{ Latitude=latitude,Longitude=longitude,FlagAnomaly=false,Trust=70,Count=1,Date=DateTime.Now,Update=DateTime.Now };
+                Anomaly newAnomaly = new Anomaly{ Latitude=latitude, Longitude=longitude, FlagAnomaly=false, Trust=70,Count=1,Date=DateTime.Now,Update=DateTime.Now };
                 AnomalyDb.anomalies.Add(newAnomaly);
                 AnomalyDb.SaveChanges();
             }
